@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Blog website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+</head>
+<body class="bod">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/static/images/logo.webp" class="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#ha">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5000/add">Add New Post</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <h1 class="head"><i><bold>BLOG POSTS</bold></i></h1>
+    
+    <img src="/static/images/cro.png" class="hari" class="d-block w-100" alt="..."><br><br>
+
+<div class="container">
+<hr>
+<marquee><p>Wellcome to My blog website.This my blog main page to see the all blogs and content .Your have new post upload click on add posts, Open the blog upload page enter a Title and content you have post to memories add image (optional) Enter all content to add posts click posts was upload return to main page when see your blog. </p></marquee>
+<hr>
+      <a href="{{ url_for('add_post') }}" id="ri" class="main">Add a new post</a>
+
+</div><br><br>
+<div >
+    <h1 class="post"><i><bold>POSTS</bold></i></h1>
+    <hr>
+    <div class="container">
+
+    {% for post in posts %}
+
+      
+        <h2>{{ post[1] }}</h2> <!-- Title -->
+        <p>{{ post[2] }}</p> <!-- Content -->
+      
+        {% if post[3] %}
+        <img src="{{ url_for('static', filename='uploads/' + post[3]) }}" style="max-width: 150px;">
+        {% else %}
+            <p>No image available</p>
+        {% endif %}
+
+    <form action="{{ url_for('delete_post', id=post[0]) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this post?');">
+      <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+    {% endfor %}
+
+</div>
+
+    <hr>
+    <br><br>
+  
+  <div class="container">
+  
+    <!-- Header section -->
+    <div class="header">
+        <h1 id="ha">About Us</h1>
+        <p>Learn more about our company and what we do</p>
+    </div>
+
+    <!-- About section -->
+    <div class="section">
+        <img src="{{ url_for('static', filename='images/vijay.webp') }}" alt="About Us" class="about"><br><br>
+        <p>We are a passionate team dedicated to creating innovative solutions. Our mission is to provide quality service and products to our clients while fostering a culture of creativity and teamwork.</p>
+    </div>
+
+    <!-- Our Mission section -->
+    <div class="section">
+        <h2>Our Goal</h2>
+        <img src="{{ url_for('static', filename='images/mission.webp') }}" alt="About Us" class="about"><br><br>
+        <p>Our mission is to make the world a better place through technology and innovation. We strive to help businesses grow and succeed by offering customized solutions that meet their needs.</p>
+    </div>
+
+
+</body>
+</html>

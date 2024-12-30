@@ -1,0 +1,86 @@
+.body{
+    background: linear-gradient(to right, #2575fc, #822edb ,#db9e2e);
+}
+
+.head{
+    text-align: center;
+    
+}
+.main{  
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    left: 45%;
+    border: 50px;
+    border-radius: 10%;
+
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(45, 193, 230);
+  
+}
+
+.headd{
+    text-align: center;
+    background: linear-gradient(to right, #2575fc, #822edb ,#db9e2e);
+    height: 80px;
+    padding: 10px;
+    color: aqua;
+}
+.har{
+    width: 389px;
+    height: 35px;
+
+}
+.formm{
+    background: linear-gradient(to right, #2575fc, #822edb ,#db9e2e);
+    padding:50px ;
+}
+.bo{
+    position: relative;
+    background: linear-gradient(to right, #6a11cb, #2575fc,#25fcdf);
+}
+.logo{
+    width: 100px;
+    margin: 0;
+}
+.hari{
+    height: 500px;
+    width: 100%;
+}
+.about{
+    height: 250px;
+}
+.footer{
+    background: linear-gradient(to right, #2575fc, #822edb ,#db9e2e);
+    color: white;
+    padding: 20px; 
+    text-align: center;
+
+}
+.post{
+    text-align: center;
+
+    
+}
+.bodd{
+    background-color:#6a11cb;
+    color:wheat ;
+    border: 10px;
+}
+.tex{
+    position: absolute;
+    left: 250px;
+    top: 10px;
+    color: rgb(0, 0, 0);
+}
+.coo{
+    position: absolute;
+    left: 250px;
+    bottom: 20px;
+}
+.im{
+    position: relative;
+    left: 10px;
+}
